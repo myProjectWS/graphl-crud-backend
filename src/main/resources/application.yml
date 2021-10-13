@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    platform: h2
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+
+graphql:
+  servlet:
+    mapping: /graphql/**
+    enabled: true
+    cors-enabled: true
+
+graphiql:
+  mapping: /graphiql
+  enabled: true
+  pageTitle: GraphiQL

@@ -1,0 +1,29 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query{
+    customers(inputCustomer: InputCustomer) : [CustomerInfo]
+    customer(id: Int!) : CustomerInfo
+}
+
+type Mutation{
+    addCustomer(inputCustomer: InputCustomer!) : CustomerInfo
+    deleteCustomer(id: Int!) : String
+    updateCustomer(inputCustomer: InputCustomer!) : CustomerInfo
+}
+
+type CustomerInfo{
+    id: Int
+    firstName: String
+    lastName: String
+    latestScore: Int
+}
+
+input InputCustomer{
+    id: Int
+    firstName: String
+    lastName: String
+    latestScore: Int
+}
